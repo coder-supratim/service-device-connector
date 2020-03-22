@@ -12,14 +12,34 @@
 	<artifactId>service-device-connector</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>service-device-connector</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Microservice project for smart device management</description>
 
 	<properties>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Hoxton.SR3</spring-cloud.version>
+		<sleuth-zipkin.version>2.2.0.RELEASE</sleuth-zipkin.version>
 	</properties>
 
+
+
+
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
+			<version>${sleuth-zipkin.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.8</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.10.2</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
