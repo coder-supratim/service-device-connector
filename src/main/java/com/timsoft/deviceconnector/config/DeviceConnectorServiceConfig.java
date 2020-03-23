@@ -2,12 +2,13 @@ package com.timsoft.deviceconnector.config;
 
 
 import brave.sampler.Sampler;
-import org.springframework.cloud.sleuth.sampler.SamplerAutoConfiguration;
+import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
 @Configuration
+@AllArgsConstructor
 public class DeviceConnectorServiceConfig {
 
 
@@ -18,7 +19,7 @@ public class DeviceConnectorServiceConfig {
 
 
     @Bean
-    RestTemplate getRestTemplate(){
+    public RestTemplate getRestTemplate(){
         return new RestTemplate();
     }
 }
