@@ -1,2 +1,2 @@
 # service-device-connector
-A microservice that provides REST endpoints to integrate smart home devices from various smart home product lines
+A sample Spring boot microservice that provides REST endpoints to integrate smart home devices from various smart home service providers
