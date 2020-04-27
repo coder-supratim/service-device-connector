@@ -5,18 +5,25 @@ import com.timsoft.deviceconnector.model.DeviceConnection;
 import com.timsoft.deviceconnector.service.DeviceConnectionService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-@AllArgsConstructor
+
 public class DeviceConnectionServiceImpl implements DeviceConnectionService {
 
-    private final DeviceConnectorServiceConfig deviceConnectorServiceConfig;
-
-    //@Value("${registration.service.endpoint}")
-    private final String deviceRegistrationEndpoint = "http://localhost:8081/device-registrar/v1/isregistered/y889id";
+    @Autowired
+    private DeviceConnectorServiceConfig deviceConnectorServiceConfig;
+    @Value("${registration.service.endpoint}")
+    private String deviceRegistrationEndpoint;
+    //= "http://localhost:8081/device-registrar/v1/isregistered/y889id";
 
     @Override
     public DeviceConnection getConnection(String deviceName) {
