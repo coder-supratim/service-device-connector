@@ -2,6 +2,8 @@ package com.timsoft.deviceconnector.model;
 
 public class DeviceConnection    {
 
+    private String deviceId;
+
     private String deviceName;
 
     private String provider;
@@ -30,5 +32,13 @@ public class DeviceConnection    {
 
     public void setConnectionProtocol(String connectionProtocol) {
         this.connectionProtocol = connectionProtocol;
+    }
+
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
     }
 }
