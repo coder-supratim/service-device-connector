@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
-@RequestMapping("/device-connect/v1")
+@RequestMapping("/device-connector/v1")
 @AllArgsConstructor
 public class DeviceConnectionController {
     private final DeviceConnectionService deviceConnectionService;
-    @GetMapping(value = "/device/{deviceName}", produces = "application/json")
-    public ResponseEntity<DeviceConnection> getConnection(@PathVariable String deviceName){
-       log.info("Device connection Get API invoked {}", deviceName);
+    @GetMapping(value = "/device/{deviceId}", produces = "application/json")
+    public ResponseEntity<DeviceConnection> getConnection(@PathVariable String deviceId){
+       log.info("Device connection Get API invoked {}", deviceId);
 
-       return ResponseEntity.ok(deviceConnectionService.getConnection(deviceName));
+       return ResponseEntity.ok(deviceConnectionService.getConnection(deviceId));
     }
 
 }
